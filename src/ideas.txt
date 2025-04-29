@@ -1,0 +1,67 @@
+Products what properties do they need? 
+
+const product = {
+    id: an UUID,
+    title: name of product,
+    category: an array as one product might fit several categories,
+    description: product description,
+    price: how much does it cost, 
+    image: image path,
+    reviews: [
+        id: uuid,
+        name: user's name,
+        comment: user's comment
+
+    ]
+
+}
+
+BACKEND DATA
+
+[
+  {
+    "id": "7b972e9d-5a8f-487f-83b3-1c88e77a961f",
+    "title": "Wireless Headphones",
+    "category": "electronics",
+    "description": "",
+    "price": 20,
+    "image": "https://via.placeholder.com/150",
+    "reviews": [
+      {
+        "id": "c3425249-36d4-44e8-b432-0fa0a2fc2a02",
+        "name": "Alice",
+        "comment": "Great sound quality and battery life."
+      },
+    ]
+  },
+  {
+    "id": "2e034f21-93f7-4d0f-9205-d8b7e0b6d66c",
+    "title": "Fantasy Novel",
+    "category": "books",
+    "description": "",
+    "price": 20,
+    "image": "https://via.placeholder.com/150",
+    "reviews": [
+      {
+        "id": "91f7fd48-084f-4d9f-8c6b-2843d8e022dc",
+        "name": "Charlie",
+        "comment": "Couldn't put it down!"
+      }
+    ]
+  },
+  {
+    "id": "ccf72883-5b20-4b1b-a42b-3fa4f32428a1",
+    "title": "Denim Jacket",
+    "category": "clothing",
+    "description": "",
+    "price": 20,
+    "image": "https://via.placeholder.com/150",
+    "reviews": [
+      {
+        "id": "80c6c09e-08d0-43f0-97c6-c13e342d9a3a",
+        "name": "Dana",
+        "comment": "Stylish and fits perfectly!"
+      }
+    ]
+  }
+]
