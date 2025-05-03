@@ -10,7 +10,7 @@ const Footer = () => {
           Developed by Daniel and Angèle
         </Typography>
         <Link
-          href="https://github.com/your-repo"
+          href="https://github.com/damasto/muggles-magic-market"
           target="_blank"
           rel="noopener"
           color="inherit"
