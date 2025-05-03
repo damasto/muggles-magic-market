@@ -1,4 +1,5 @@
-import products from "../data.json"
+import axios from "axios";
+import { useState, useEffect } from "react";
 
 import {
   Card, CardContent, CardMedia, Typography, CardActions, Button, Box
@@ -9,7 +10,26 @@ import Grid from "@mui/material/Grid";
 
 export default function ProductList() {
 
-    console.log( products )
+const [products, setProducts] = useState([]);
+
+const getProducts = () => {
+  axios.get("http://localhost:5005/products")
+  .then((response) => {
+    console.log("this is the response object", response)
+    console.log("this is the response data", response.data)
+  
+    setProducts(response.data)
+  }).catch((error) => console.log(error))
+}
+
+useEffect(() => {
+  console.log("fetching products...")
+  getProducts()
+}, [])
+
+  
+console.log("our products: ", products )
+
   return (
     <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
       <Grid
