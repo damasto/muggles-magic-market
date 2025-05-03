@@ -1,4 +1,4 @@
-import products from "../data.json"
+import axios from "axios"
 
 import {
   Card, CardContent, CardMedia, Typography, CardActions, Button, Box
@@ -11,10 +11,10 @@ export default function ProductList() {
 
     console.log( products )
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4 }}>
+    <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4, maxWidth: "100%" }}>
       <Grid
         container
-        spacing={4}
+        spacing={9}
         justifyContent="center"
         sx={{ maxWidth: "90%" }}
       >
