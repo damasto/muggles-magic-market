@@ -5,7 +5,7 @@ import CardMedia from '@mui/material/CardMedia';
 import Typography from '@mui/material/Typography';
 import CardActionArea from '@mui/material/CardActionArea';
 
-export default function Offer() {
+export default function Header() {
   return (
     <Card className="test" sx={{ maxWidth: "90%"}}>
       <CardActionArea>
@@ -17,7 +17,7 @@ export default function Offer() {
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
-            OFFER
+            Header
           </Typography>
           <Typography variant="body2" sx={{ color: 'text.secondary' }}>
             Lizards are a widespread group of squamate reptiles, with over 6,000
