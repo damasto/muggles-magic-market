@@ -30,7 +30,9 @@ export default function CategoryTabs() {
         centered
       >
         {categories.map(cat => (
-          <Tab key={cat.path} label={cat.label} value={cat.path} />
+          <Tab key={cat.path} label={cat.label} value={cat.path} 
+            sx={{ marginX: 2 }}
+          />
         ))}
       </Tabs>
     </Box>
