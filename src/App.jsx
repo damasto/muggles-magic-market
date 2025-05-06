@@ -6,12 +6,14 @@ import HomePage from './pages/HomePage'
 import ProductDetailPage from './pages/ProductDetailPage'
 import  ShoppingCart  from "./pages/ShoppingCart"
 import CheckoutPage from './pages/CheckoutPage'
+import NotFoundPage from './pages/NotFoundPage'
 
 function App() {
 
   return (
     <>
     <Routes>
+      <Route path="*" element={<NotFoundPage />}></Route>
       <Route path="/" element={<HomePage />}></Route>
       <Route path="/category" element={<CategoryPage />}></Route>
       <Route path="/product-detail/:productId" element={<ProductDetailPage />}></Route>
