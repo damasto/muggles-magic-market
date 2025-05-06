@@ -11,6 +11,7 @@ import Grid from "@mui/material/Grid";
 export default function ProductList() {
 
 const [products, setProducts] = useState([]);
+const imageAPI = "http://localhost:5173/src/assets/"
 
 const getProducts = () => {
   axios.get("http://localhost:5005/products")
@@ -44,7 +45,7 @@ console.log("our products: ", products )
               <CardMedia
                 component="img"
                 height="180"
-                image={product.image}
+                image={`${imageAPI}${product.image}`}
                 alt={product.title}
               />
               <CardContent>
