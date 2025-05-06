@@ -16,6 +16,7 @@ import AccountCircle from '@mui/icons-material/AccountCircle';
 import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
+import CategoryTabs from "./CategoryTabs"
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -218,6 +219,7 @@ export default function NavBar() {
           </Box>
         </Toolbar>
       </AppBar>
+      <CategoryTabs />
       {renderMobileMenu}
       {renderMenu}
     </Box>
