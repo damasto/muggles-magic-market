@@ -17,6 +17,8 @@ import MailIcon from '@mui/icons-material/Mail';
 import NotificationsIcon from '@mui/icons-material/Notifications';
 import MoreIcon from '@mui/icons-material/MoreVert';
 import CategoryTabs from "./CategoryTabs"
+import HomeIcon from '@mui/icons-material/Home';
+import { useNavigate } from 'react-router-dom';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -82,6 +84,8 @@ export default function NavBar() {
   const handleMobileMenuOpen = (event) => {
     setMobileMoreAnchorEl(event.currentTarget);
   };
+
+  const navigate = useNavigate();
 
   const menuId = 'primary-search-account-menu';
   const renderMenu = (
@@ -165,10 +169,11 @@ export default function NavBar() {
             size="large"
             edge="start"
             color="inherit"
-            aria-label="open drawer"
+            aria-label="go to homepage"
             sx={{ mr: 2 }}
+            onClick={() => window.location.href = '/'}
           >
-            <MenuIcon />
+            <HomeIcon />
           </IconButton>
           <Typography
             variant="h6"
@@ -178,7 +183,15 @@ export default function NavBar() {
           >
             Muggles' Magic Market
           </Typography>
-          <Box sx={{ flexGrow: 1, display: 'flex', justifyContent: 'center' }}>
+          <Box
+    sx={{
+      position: 'absolute',
+      left: '50%',
+      transform: 'translateX(-50%)',
+      width: '100%',
+      maxWidth: 600,
+    }}
+  >
           <Search>
             <SearchIconWrapper>
               <SearchIcon />

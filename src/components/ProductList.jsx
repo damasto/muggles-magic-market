@@ -10,6 +10,7 @@ import Grid from "@mui/material/Grid";
 
 export default function ProductList() {
 
+  console.log("hello");
 const [products, setProducts] = useState([]);
 const imageAPI = "http://localhost:5173/src/assets/"
 
@@ -30,6 +31,7 @@ useEffect(() => {
 
   
 console.log("our products: ", products )
+
 
   return (
     <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4, maxWidth: "100%" }}>
