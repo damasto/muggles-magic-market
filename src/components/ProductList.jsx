@@ -9,8 +9,6 @@ import Grid from "@mui/material/Grid";
 
 
 export default function ProductList() {
-
-  console.log("hello");
 const [products, setProducts] = useState([]);
 const imageAPI = "http://localhost:5173/src/assets/"
 
@@ -31,32 +29,60 @@ useEffect(() => {
 
   
 console.log("our products: ", products )
-
+const displayedProducts = products.slice(0, 4);
 
   return (
-    <Box sx={{ display: 'flex', justifyContent: 'center', mt: 4, maxWidth: "100%" }}>
+    <>
+    <Box sx={{
+        textAlign: 'left',
+        backgroundColor: '#fff', 
+        pt: 6, 
+        ml: 6, 
+      }}>
+        <Typography variant="h4" sx={{
+          color: '#000', 
+          fontWeight: 'bold',
+          fontSize: '1.5rem',
+          textTransform: 'uppercase',
+          letterSpacing: '2px',
+          textShadow: 'none',
+        }}>
+          Bestsellers
+        </Typography>
+      </Box>
+    <Box 
+    sx={{
+      backgroundColor: '#1b4d3e',
+      py: 4, 
+      display: 'flex',  width: '100%', justifyContent: 'center',
+      mt: 3 }}>
       <Grid
         container
-        spacing={9}
+        spacing={4}
         justifyContent="center"
-        sx={{ maxWidth: "90%" }}
-      >
-        {products.map((product) => (
+        sx={{
+          maxWidth: '100%',  
+          width: '100%',
+          margin: 0, }}>
+        {displayedProducts.map((product) => (
           <Grid item xs={12} sm={6} md={4} key={product.id}>
-            <Card >
+            <Card sx={{ width: 250, height: 350, display: 'flex', flexDirection: 'column' }}>
               <CardMedia
                 component="img"
-                height="180"
+                sx={{
+                  width: '100%',
+                  height: '100%',  
+                  objectFit: 'cover',  
+                }}
                 image={`${imageAPI}${product.image}`}
                 alt={product.title}
               />
-              <CardContent>
-                <Typography variant="h6">{product.title}</Typography>
-                <Typography variant="body2" color="text.secondary">
-                  {product.category}
+              <CardContent  sx={{ flexGrow: 1, paddingBottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
+                <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: 0.25 }}>
+                {product.title}
                 </Typography>
               </CardContent>
-              <CardActions>
+              <CardActions sx={{ justifyContent: 'space-between', padding: '4 16px 8px 16px' }}>
                 <Button size="small">Details</Button>
                 <Button size="small">Add to Cart</Button>
               </CardActions>
@@ -65,6 +91,6 @@ console.log("our products: ", products )
         ))}
       </Grid>
     </Box>
-
+</>
   );
 }
