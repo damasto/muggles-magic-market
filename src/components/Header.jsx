@@ -1,30 +1,47 @@
-import * as React from 'react';
-import Card from '@mui/material/Card';
-import CardContent from '@mui/material/CardContent';
-import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import CardActionArea from '@mui/material/CardActionArea';
+import React from 'react';
+import { Box, Typography, Button } from '@mui/material';
+import headerImage from '../assets/header.png';
 
-export default function Header() {
+const Header = () => {
   return (
-    <Card className="test" sx={{ maxWidth: "90%"}}>
-      <CardActionArea>
-        <CardMedia
-          component="img"
-          height="140"
-          image="/static/images/cards/contemplative-reptile.jpg"
-          alt="green iguana"
-        />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            Header
-          </Typography>
-          <Typography variant="body2" sx={{ color: 'text.secondary' }}>
-            Lizards are a widespread group of squamate reptiles, with over 6,000
-            species, ranging across all continents except Antarctica
-          </Typography>
-        </CardContent>
-      </CardActionArea>
-    </Card>
+    <Box
+      sx={{
+        height: 400,
+        width: '100%',
+        backgroundImage: `url(${headerImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'flex-start',
+        justifyContent: 'center',
+        textAlign: 'left',
+        color: 'white',
+        flexDirection: 'column',
+        padding: 2,
+        paddingLeft: 10,
+        paddingBottom: 3,
+      }}
+    >
+      <Typography variant="h3" sx={{ 
+          fontWeight: 'bold',
+          color: '#f3ebd9',
+          textShadow: '2px 2px 8px rgba(0, 0, 0, 0.9), 0px 0px 6px rgba(0, 0, 0, 0.7)', 
+          marginBottom: 2
+        }}
+      >
+        Discover magic in every corner
+      </Typography>
+      <Button variant="contained"
+      sx={{
+        color: '#f3ebd9',
+        border: '2px solid #f3ebd9',
+        backgroundColor: '#0d1b2a',
+        }}>
+        Shop Now
+      </Button>
+    </Box>
   );
-}
+};
+
+export default Header;

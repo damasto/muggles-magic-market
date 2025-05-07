@@ -20,7 +20,7 @@ export default function CategoryTabs() {
   };
 
   return (
-    <Box sx={{ backgroundColor: 'background.paper' }}>
+    <Box sx={{ width: 'calc(100% - 50px)', margin: '0 auto' }}>
       <Tabs
         value={currentTab}
         onChange={handleChange}
