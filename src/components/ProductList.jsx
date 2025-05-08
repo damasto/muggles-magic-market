@@ -1,7 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import {Link} from "react-router-dom";
-
 import {
   Card,
   CardContent,
@@ -85,26 +84,6 @@ export default function ProductList() {
           {displayedProducts.map((product) => (
             <Grid item xs={12} sm={6} md={4} key={product.id}>
               <Card
-    <Box 
-    sx={{
-      backgroundColor: '#1b4d3e',
-      py: 4, 
-      display: 'flex',  width: '100%', justifyContent: 'center',
-      mt: 3 }}>
-      <Grid
-        container
-        spacing={4}
-        justifyContent="center"
-        sx={{
-          maxWidth: '100%',  
-          width: '100%',
-          margin: 0, }}>
-        {displayedProducts.map((product) => (
-          <Grid item xs={12} sm={6} md={4} key={product.id}>
-            <Link to={`/product-details/${product.id}`}>
-            <Card sx={{ width: 250, height: 350, display: 'flex', flexDirection: 'column' }}>
-              <CardMedia
-                component="img"
                 sx={{
                   width: '100%',
                   height: '100%',  
@@ -112,7 +91,7 @@ export default function ProductList() {
                 }}
                 image={`${imageAPI}${product.image}`}
                 alt={product.title}
-              />
+              >
               <CardContent  sx={{ flexGrow: 1, paddingBottom: 0, display: 'flex', flexDirection: 'column', justifyContent: 'flex-start' }}>
                 <Typography variant="h6" sx={{ fontWeight: 'bold', marginBottom: 0.25 }}>
                 {product.title}
