@@ -7,6 +7,7 @@ const categories = [
   { label: 'Category 2', path: '/category2' },
   { label: 'Category 3', path: '/category3' },
   { label: 'Category 4', path: '/category4' },
+  { label: 'Category 5', path: '/category5' },
 ];
 
 export default function CategoryTabs() {
