@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import {Link} from "react-router-dom";
 
 import {
   Card, CardContent, CardMedia, Typography, CardActions, Button, Box
@@ -66,6 +67,7 @@ const displayedProducts = products.slice(0, 4);
           margin: 0, }}>
         {displayedProducts.map((product) => (
           <Grid item xs={12} sm={6} md={4} key={product.id}>
+            <Link to={`/product-details/${product.id}`}>
             <Card sx={{ width: 250, height: 350, display: 'flex', flexDirection: 'column' }}>
               <CardMedia
                 component="img"
@@ -87,6 +89,7 @@ const displayedProducts = products.slice(0, 4);
                 <Button size="small">Add to Cart</Button>
               </CardActions>
             </Card>
+            </Link>
           </Grid>
         ))}
       </Grid>
