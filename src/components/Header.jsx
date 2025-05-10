@@ -8,6 +8,8 @@ const Header = () => {
       sx={{
         height: 400,
         width: '100%',
+        maxWidth: 1280,
+        margin: '0 auto',
         backgroundImage: `url(${headerImage})`,
         backgroundSize: 'cover',
         backgroundPosition: 'center',

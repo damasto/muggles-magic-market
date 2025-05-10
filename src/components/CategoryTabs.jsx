@@ -23,7 +23,11 @@ export default function CategoryTabs() {
   };
 
   return (
-    <Box sx={{ width: 'calc(100% - 50px)', margin: '0 auto' }}>
+    <Box sx={{ 
+      width: '100%', 
+      margin: '0 auto',
+      backgroundColor: "#EED5A5",
+        }}>
       <Tabs
         value={currentTab}
         onChange={handleChange}
