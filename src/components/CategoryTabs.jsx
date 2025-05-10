@@ -1,13 +1,16 @@
 import React from 'react';
 import { Tabs, Tab, Box } from '@mui/material';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 const categories = [
-  { label: 'Category 1', path: '/category1' },
-  { label: 'Category 2', path: '/category2' },
-  { label: 'Category 3', path: '/category3' },
-  { label: 'Category 4', path: '/category4' },
-  { label: 'Category 5', path: '/category5' },
+  { label: 'Animals', path: '/category/animals' },
+  { label: 'Food', path: '/category/food' },
+  { label: 'Jewelry', path: '/category/jewelry' },
+  { label: 'Potions', path: '/category/potions' },
+  { label: 'Wands', path: '/category/wands' },
+  { label: 'Selling', path: '/category/selling' },
+
 ];
 
 export default function CategoryTabs() {
@@ -21,7 +24,11 @@ export default function CategoryTabs() {
   };
 
   return (
-    <Box sx={{ width: 'calc(100% - 50px)', margin: '0 auto' }}>
+    <Box sx={{ 
+      width: '100%', 
+      margin: '0 auto',
+      backgroundColor: "#EED5A5",
+        }}>
       <Tabs
         value={currentTab}
         onChange={handleChange}
@@ -30,9 +37,13 @@ export default function CategoryTabs() {
         centered
       >
         {categories.map(cat => (
+          <>
+          <Link to = { cat.path }> 
           <Tab key={cat.path} label={cat.label} value={cat.path} 
             sx={{ marginX: 2 }}
           />
+          </Link>
+          </>
         ))}
       </Tabs>
     </Box>

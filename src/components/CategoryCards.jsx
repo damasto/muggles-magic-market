@@ -1,13 +1,14 @@
 import React from 'react';
 import { Card, CardContent, CardMedia, Typography, Box, Grid } from "@mui/material";
+import { Link } from 'react-router-dom';
 
 const CategoryCards = () => {
   const displayedCategories = [
-    { id: 1, title: 'cat 1', image: 'cat1.jpg' },
-    { id: 2, title: 'cat 2', image: 'cat2.jpg' },
-    { id: 3, title: 'cat 3', image: 'cat3.jpg' },
-    { id: 4, title: 'cat 4', image: 'cat4.jpg' },
-    { id: 5, title: 'cat 5', image: 'cat5.jpg' },
+    { id: 1, title: 'Animals', image: 'animals.jpg' },
+    { id: 2, title: 'Food', image: 'food.jpg' },
+    { id: 3, title: 'Jewelry', image: 'jewelry.jpg' },
+    { id: 4, title: 'Potions', image: 'potions.jpg' },
+    { id: 5, title: 'Wands', image: 'wands.jpg' },
   ];
 
   return (
