@@ -7,6 +7,7 @@ import ProductDetailPage from './pages/ProductDetailPage'
 import  ShoppingCart  from "./pages/ShoppingCart"
 import CheckoutPage from './pages/CheckoutPage'
 import NotFoundPage from './pages/NotFoundPage'
+import SellingPage from './pages/SellingPage'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <Route path="*" element={<NotFoundPage />}></Route>
       <Route path="/" element={<HomePage />}></Route>
       <Route path="/category" element={<CategoryPage />}></Route>
+      <Route path="/selling" element={<SellingPage />}></Route>
       <Route path="/product-detail/:productId" element={<ProductDetailPage />}></Route>
       <Route path="/shopping-cart" element={<ShoppingCart />}></Route>
       <Route path="/checkout" element={<CheckoutPage />}></Route>

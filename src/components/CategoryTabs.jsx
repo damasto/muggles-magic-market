@@ -3,11 +3,13 @@ import { Tabs, Tab, Box } from '@mui/material';
 import { useNavigate, useLocation } from 'react-router-dom';
 
 const categories = [
-  { label: 'Category 1', path: '/category1' },
-  { label: 'Category 2', path: '/category2' },
-  { label: 'Category 3', path: '/category3' },
-  { label: 'Category 4', path: '/category4' },
-  { label: 'Category 5', path: '/category5' },
+  { label: 'Animals', path: '/animals' },
+  { label: 'Food', path: '/food' },
+  { label: 'Jewelry', path: '/jewelry' },
+  { label: 'Potions', path: '/potions' },
+  { label: 'Wands', path: '/wands' },
+  { label: 'Selling', path: '/selling' },
+
 ];
 
 export default function CategoryTabs() {
