@@ -48,7 +48,7 @@ export default function AllProductsPage() {
             letterSpacing: "2px",
           }}
         >
-          Alle Producten
+          All Products
         </Typography>
       </Box>
       <Box
