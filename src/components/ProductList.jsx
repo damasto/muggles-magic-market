@@ -83,15 +83,16 @@ export default function ProductList() {
         >
           {displayedProducts.map((product) => (
             <Grid item xs={12} sm={6} md={4} key={product.id}>
-              <Link className="link" to={`/product-details/${product.id}`}>
-                <Card
-                  sx={{
-                    width: 250,
-                    height: 350,
-                    display: "flex",
-                    flexDirection: "column",
-                  }}
-                >
+
+              <Card
+                sx={{
+                  width: 250,
+                  height: 350,
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <Link className="link" to={`/product-details/${product.id}`}>
                   <CardMedia
                     component="img"
                     sx={{
@@ -102,35 +103,37 @@ export default function ProductList() {
                     image={`${imageAPI}${product.image}`}
                     alt={product.title}
                   />
-                  <CardContent
-                    sx={{
-                      flexGrow: 1,
-                      paddingBottom: 0,
-                      display: "flex",
-                      flexDirection: "column",
-                      justifyContent: "flex-start",
-                    }}
+                </Link>
+                <CardContent
+                  sx={{
+                    flexGrow: 1,
+                    paddingBottom: 0,
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "flex-start",
+                  }}
+                >
+                  <Typography
+                    variant="h6"
+                    sx={{ fontWeight: "bold", marginBottom: 0.25 }}
                   >
-                    <Typography
-                      variant="h6"
-                      sx={{ fontWeight: "bold", marginBottom: 0.25 }}
-                    >
-                      {product.title}
-                    </Typography>
-                  </CardContent>
-                  <CardActions
-                    sx={{
-                      justifyContent: "space-between",
-                      padding: "4 16px 8px 16px",
-                    }}
-                  >
+                    {product.title}
+                  </Typography>
+                </CardContent>
+                <CardActions
+                  sx={{
+                    justifyContent: "space-between",
+                    padding: "4 16px 8px 16px",
+                  }}
+                >
+                  <Link className="link" to={`/product-details/${product.id}`}>
                     <Button size="small">Details</Button>
-                    <Button size="small">
-                      <ShoppingCartIcon />
-                    </Button>
-                  </CardActions>
-                </Card>
-              </Link>
+                  </Link>
+                  <Button size="small">
+                    <ShoppingCartIcon />
+                  </Button>
+                </CardActions>
+              </Card>
             </Grid>
           ))}
         </Grid>
