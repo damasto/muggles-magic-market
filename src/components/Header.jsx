@@ -1,6 +1,7 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
 import headerImage from '../assets/header.png';
+import { Link } from 'react-router-dom';
 
 const Header = () => {
   return (
@@ -34,6 +35,7 @@ const Header = () => {
       >
         Discover magic in every corner
       </Typography>
+       <Link to="/all-products" style={{ textDecoration: 'none' }}>
       <Button variant="contained"
       sx={{
         color: '#f3ebd9',
@@ -42,6 +44,7 @@ const Header = () => {
         }}>
         Shop Now
       </Button>
+      </Link>
     </Box>
   );
 };
