@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 const CategoryCards = () => {
   const displayedCategories = [
-    { id: 1, title: 'Animals', image: 'animals.jpg' },
-    { id: 2, title: 'Food', image: 'food.jpg' },
-    { id: 3, title: 'Jewelry', image: 'jewelry.jpg' },
-    { id: 4, title: 'Potions', image: 'potions.jpg' },
-    { id: 5, title: 'Wands', image: 'wands.jpg' },
+  { label: 'Animals', path: '/category/animals' },
+  { label: 'Food', path: '/category/food' },
+  { label: 'Jewelry', path: '/category/jewelry' },
+  { label: 'Potions', path: '/category/potions' },
+  { label: 'Wands', path: '/category/wands' },
   ];
 
   return (
@@ -73,8 +73,9 @@ const CategoryCards = () => {
                     objectFit: "cover",
                   }}
                   image={`path_to_images/${category.image}`} 
-                  alt={category.title}
+                  alt={category.label}
                 />
+                <Link className="link" to = { category.path }> 
                 <CardContent
                   sx={{
                     flexGrow: 1,
@@ -88,9 +89,10 @@ const CategoryCards = () => {
                     variant="h6"
                     sx={{ fontWeight: "bold", marginBottom: 0.25 }}
                   >
-                    {category.title}
+                    {category.label}
                   </Typography>
                 </CardContent>
+                </Link>
               </Card>
             </Grid>
           ))}
