@@ -92,18 +92,17 @@ export default function ProductList() {
                   flexDirection: "column",
                 }}
               >
-                <Link className="link" to={`/product-details/${product.id}`}>
                   <CardMedia
                     component="img"
                     sx={{
                       width: "100%",
                       height: "100%",
                       objectFit: "cover",
+  
                     }}
                     image={`${imageAPI}${product.image}`}
                     alt={product.title}
                   />
-                </Link>
                 <CardContent
                   sx={{
                     flexGrow: 1,

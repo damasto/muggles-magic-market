@@ -118,10 +118,13 @@ export default function ProductDetailPage() {
                 <Card sx={{ maxWidth: 800, width: '100%', boxShadow: 6, p: 2 }}>
                     <CardMedia
                         component="img"
-                        height="400"
                         image={`${imageAPI}/${product.image}`}
                         alt={product.title}
-                        sx={{ objectFit: 'cover' }}
+                        sx={{
+                            width: "100%",
+                            height: "100%",
+                            objectFit: "cover",
+                          }}
                     />
                     <CardContent>
                         <Typography variant="h4" gutterBottom>
@@ -136,7 +139,7 @@ export default function ProductDetailPage() {
 
                             <CardActions sx={{ justifyContent: 'space-between', padding: '4 16px 8px 16px' }}>
                                 <Typography variant="body1" color="text.secondary" paragraph>
-                                    {`${product.price}€`}
+                                    {`Price: ${product.price}€`}
                                 </Typography>
                                 <Button size="small">Add to Cart</Button>
                             </CardActions>
