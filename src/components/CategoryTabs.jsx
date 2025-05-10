@@ -2,6 +2,7 @@ import React from 'react';
 import { Tabs, Tab, Box } from '@mui/material';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import backgroundbarImage from '../assets/backgroundbar.png';
 
 const categories = [
   { label: 'Animals', path: '/category/animals' },
@@ -28,6 +29,10 @@ export default function CategoryTabs() {
       width: '100%', 
       margin: '0 auto',
       backgroundColor: "#EED5A5",
+    backgroundImage: `url(${backgroundbarImage})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
+    backgroundRepeat: 'no-repeat',
         }}>
       <Tabs
         value={currentTab}
@@ -35,17 +40,25 @@ export default function CategoryTabs() {
         indicatorColor="secondary"
         textColor="secondary"
         centered
+         sx={{
+          '& .MuiTabs-indicator': {
+            backgroundColor: '#A97C50', 
+          },
+        }}
       >
         {categories.map(cat => (
-          <>
-          <Link to = { cat.path }> 
           <Tab key={cat.path} label={cat.label} value={cat.path} 
-            sx={{ marginX: 2 }}
+            sx={{ marginX: 2,
+            color: '#0F2A2C',
+                '&:hover': {
+            color: '#0F2A2C',
+            },
+          '&.Mui-selected': {
+      color: '#0F2A2C',
+            fontWeight: 'bold' }}}
           />
-          </Link>
-          </>
         ))}
-      </Tabs>
+   </Tabs>
     </Box>
   );
 }

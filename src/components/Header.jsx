@@ -20,10 +20,10 @@ const Header = () => {
         justifyContent: 'center',
         textAlign: 'left',
         color: 'white',
-        flexDirection: 'column',
         padding: 2,
         paddingLeft: 10,
         paddingBottom: 3,
+        overflow: 'hidden',
       }}
     >
       <Typography variant="h3" sx={{ 
