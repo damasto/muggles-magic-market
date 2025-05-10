@@ -9,7 +9,7 @@ const categories = [
   { label: 'Jewelry', path: '/category/jewelry' },
   { label: 'Potions', path: '/category/potions' },
   { label: 'Wands', path: '/category/wands' },
-  { label: 'Selling', path: '/category/selling' },
+  { label: 'Selling', path: '/selling' },
 
 ];
 
