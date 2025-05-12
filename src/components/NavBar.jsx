@@ -214,7 +214,7 @@ export default function NavBar() {
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
     
-            <IconButton color="inherit" onClick={() => navigate('/cart')}>
+            <IconButton color="inherit" component={RouterLink} to="/shopping-cart">
              <ShoppingCartIcon />
             </IconButton>
 

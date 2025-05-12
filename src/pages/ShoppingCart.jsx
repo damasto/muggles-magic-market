@@ -1,9 +1,11 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Container, Typography, Box } from '@mui/material';
+import { Container, Typography, Box, List, ListItem, ListItemText, Divider, Button, Paper } from '@mui/material';
+
 
 export default function ShoppingCart () {
     return (
+
    <Container maxWidth="md">
       <Box sx={{ mt: 4 }}>
         <Typography variant="h4" gutterBottom>

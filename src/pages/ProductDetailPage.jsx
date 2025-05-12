@@ -14,6 +14,8 @@ import StarIcon from '@mui/icons-material/Star';
 export default function ProductDetailPage() {
 
     const [product, setProduct] = useState([]);
+
+
     const [commentAuthor, setCommentAuthor] = useState("")
     const [ratingAverage, setRatingAverage] = useState(0)
     const [rating, setRating] = useState(0)
@@ -96,7 +98,7 @@ export default function ProductDetailPage() {
                 setRating(0)
 
             }
-
+  addToCart(productToAdd);
 
         }
 

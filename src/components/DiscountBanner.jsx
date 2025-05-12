@@ -1,5 +1,6 @@
 import { Box, Typography, Button } from '@mui/material';
 import discountbannerImage from '../assets/discountbanner.png';
+import { Link as RouterLink } from 'react-router-dom'; 
 
 const DiscountBanner = () => {
   return (
@@ -38,7 +39,7 @@ const DiscountBanner = () => {
       >
         ✨ LIMITED TIME OFFER: 20% OFF ON ALL WANDS! ✨
       </Typography>
-      <Button variant="contained"
+      <Button variant="contained" component={RouterLink} to="/category/wands" 
       sx={{
         color: '#f3ebd9',
         border: '2px solid #f3ebd9',
