@@ -24,11 +24,11 @@ export default function CategoryTabs() {
   };
 
   return (
-    <Box sx={{ 
-      width: '100%', 
+    <Box sx={{
+      width: '100%',
       margin: '0 auto',
       backgroundColor: "#EED5A5",
-        }}>
+    }}>
       <Tabs
         value={currentTab}
         onChange={handleChange}
@@ -36,15 +36,17 @@ export default function CategoryTabs() {
         textColor="secondary"
         centered
       >
-        {categories.map(cat => (
-          <>
-          <Link to = { cat.path }> 
-          <Tab key={cat.path} label={cat.label} value={cat.path} 
-            sx={{ marginX: 2 }}
-          />
-          </Link>
-          </>
-        ))}
+        {categories.map(cat => {
+          return (
+            <Link to={cat.path}>
+              <Tab key={cat.path} label={cat.label} value={cat.path}
+                sx={{ marginX: 2 }}
+              />
+            </Link>
+          )
+        }
+
+        )}
       </Tabs>
     </Box>
   );
