@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
+import { useCart } from "../Context/CartContext";
 import { Link } from "react-router-dom";
 import {
   Card,
@@ -16,6 +17,9 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 export default function ProductList() {
   const [products, setProducts] = useState([]);
   const imageAPI = "http://localhost:5173/src/assets/";
+  const {addItem} = useCart()
+
+
 
   const getProducts = () => {
     axios
@@ -128,7 +132,7 @@ export default function ProductList() {
                   <Link className="link" to={`/product-details/${product.id}`}>
                     <Button size="small">Details</Button>
                   </Link>
-                  <Button size="small">
+                  <Button size="small" onClick={() => addItem(product)}>
                     <ShoppingCartIcon />
                   </Button>
                 </CardActions>

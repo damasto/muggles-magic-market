@@ -11,11 +11,14 @@ import SellingPage from './pages/SellingPage'
 import AllProductsPage from './pages/AllProductsPage'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
+import {CartProvider} from './Context/CartContext'
 
 function App() {
 
+
   return (
     <>
+    <CartProvider>
       <NavBar />
       <Routes>
         <Route path="*" element={<NotFoundPage />}></Route>
@@ -28,6 +31,7 @@ function App() {
         <Route path="/checkout" element={<CheckoutPage />}></Route>
       </Routes>
       <Footer />
+      </CartProvider>
     </>
   )
 }
