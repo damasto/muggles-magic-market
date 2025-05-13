@@ -14,9 +14,15 @@ export const CartProvider = ({ children }) => {
   }, []);
 
   const addItem = (item) => {
+    console.log("adding item" , item)
+    console.error("somethings wrong here")
+    console.log("bye")
     axios
-      .post("http://localhost:5005/shoppingCart", item)
-      .then((res) => setShoppingCart(previous => [...previous, res.data]))
+      .post("http://localhost:5005/shoppingCart/", item)
+      .then((res) => {
+        setShoppingCart(previous => [...previous, res.data])
+        console.log("item has been added")
+      })
       .catch((err) => console.log(err));
   };
 
