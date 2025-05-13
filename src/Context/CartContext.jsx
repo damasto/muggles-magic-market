@@ -8,21 +8,21 @@ export const CartProvider = ({ children }) => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:5005/shopping-cart")
+      .get("http://localhost:5005/shoppingCart")
       .then((res) => setShoppingCart(res.data))
       .catch((err) => console.log(console.log(err)));
   }, []);
 
   const addItem = (item) => {
     axios
-      .post("http://localhost:5005/shopping-cart", item)
+      .post("http://localhost:5005/shoppingCart", item)
       .then((res) => setShoppingCart(previous => [...previous, res.data]))
       .catch((err) => console.log(err));
   };
 
   const removeItem = (id) => {
     axios
-      .delete(`http://localhost:5005/shopping-cart/${id}`)
+      .delete(`http://localhost:5005/shoppingCart/${id}`)
       .then((res) => console.log("Item has been removed from cart:", res))
       .catch((err) => console.log(err));
   };
