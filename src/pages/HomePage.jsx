@@ -9,12 +9,10 @@ export default function HomePage() {
     return (
         <>
             <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
-                <NavBar />
                 <Header />
                 <ProductList />
                 <DiscountBanner />
                 <CategoryCards />
-                <Footer />
             </div>
         </>
     )

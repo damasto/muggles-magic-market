@@ -108,7 +108,6 @@ export default function ProductDetailPage() {
 
     return (
         <>
-            <NavBar />
             <Box
                 display="flex"
                 justifyContent="center"
@@ -238,7 +237,6 @@ export default function ProductDetailPage() {
                     </CardContent>
                 </Card>
             </Box>
-            <Footer />
         </>
     )
 }

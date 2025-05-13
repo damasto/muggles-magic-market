@@ -39,7 +39,6 @@ export default function CategoryPage() {
 
     return (
         <>
-            <NavBar />
             <Box
                 sx={{
                     textAlign: "left",
@@ -138,7 +137,6 @@ export default function CategoryPage() {
                     ))}
                 </Grid>
             </Box>
-            <Footer />
         </>
     )
 }

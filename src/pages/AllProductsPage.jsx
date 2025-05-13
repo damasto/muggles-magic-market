@@ -36,7 +36,6 @@ export default function AllProductsPage() {
 
   return (
     <>
-      <NavBar />
       <Box sx={{ textAlign: "left", backgroundColor: "#fff", pt: 6, ml: 6 }}>
         <Typography
           variant="h4"
@@ -112,7 +111,6 @@ export default function AllProductsPage() {
           ))}
         </Grid>
       </Box>
-      <Footer />
     </>
   );
 }
