@@ -2,6 +2,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { useCart } from "../Context/CartContext";
 import { Link } from "react-router-dom";
+import api from "../Api/axios";
 import {
   Card,
   CardContent,
@@ -22,8 +23,8 @@ export default function ProductList() {
 
 
   const getProducts = () => {
-    axios
-      .get("http://localhost:5005/products")
+    api
+      .get("/products")
       .then(res => setProducts(res.data))
       .catch((error) => console.log(error));
   };

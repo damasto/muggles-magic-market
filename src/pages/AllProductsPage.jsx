@@ -1,9 +1,8 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
+import api from "../Axios/axios";
 
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
 
 import {
   Box,
@@ -22,8 +21,8 @@ export default function AllProductsPage() {
   const imageAPI = "http://localhost:5173/src/assets/";
 
   const fetchAllProducts = () => {
-    axios
-      .get("http://localhost:5005/products")
+    api
+      .get("/products")
       .then((response) => {
         setProducts(response.data);
       })

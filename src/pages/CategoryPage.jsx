@@ -1,9 +1,7 @@
 import axios, { all } from "axios";
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
-
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
+import api from "../Axios/axios";
 
 import { Box, Typography, Card, CardMedia, CardActions, Grid, CardContent, Button } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
@@ -18,7 +16,7 @@ export default function CategoryPage() {
 
     const getProductByCat = () => {
         console.log("fetching products...")
-        axios
+        api
             .get("http://localhost:5005/products")
             .then((response) => {
                 const allProducts = response.data
