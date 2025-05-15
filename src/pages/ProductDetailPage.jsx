@@ -5,8 +5,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { v4 as uuid } from "uuid";
-
-
+import api from "../Api/axios";
 import { Card, Divider, CardActions, CardMedia, CardContent, Typography, Button, Box, TextField, Rating } from "@mui/material";
 import StarIcon from '@mui/icons-material/Star';
 
@@ -14,6 +13,8 @@ import StarIcon from '@mui/icons-material/Star';
 export default function ProductDetailPage() {
 
     const [product, setProduct] = useState([]);
+
+
     const [commentAuthor, setCommentAuthor] = useState("")
     const [ratingAverage, setRatingAverage] = useState(0)
     const [rating, setRating] = useState(0)
@@ -24,7 +25,7 @@ export default function ProductDetailPage() {
 
 
     const getProduct = () => {
-        axios.get(`http://localhost:5005/products/${productId}`)
+        api.get(`/products/${productId}`)
             .then((response) => {
 
                 setProduct(response.data)
@@ -54,7 +55,7 @@ export default function ProductDetailPage() {
 
     const updateReviews = (update) => {
         console.log("updating reviews...")
-        axios.put(`http://localhost:5005/products/${productId}`, update)
+        api.put(`/products/${productId}`, update)
             .then(res => {
                 console.log("product successfully updated with new comment:", res.data)
                 setProduct(res.data) //ensures re-rendering of page when reviews are updated  
@@ -97,7 +98,6 @@ export default function ProductDetailPage() {
 
             }
 
-
         }
 
     };
@@ -106,7 +106,6 @@ export default function ProductDetailPage() {
 
     return (
         <>
-            <NavBar />
             <Box
                 display="flex"
                 justifyContent="center"
@@ -236,7 +235,6 @@ export default function ProductDetailPage() {
                     </CardContent>
                 </Card>
             </Box>
-            <Footer />
         </>
     )
 }

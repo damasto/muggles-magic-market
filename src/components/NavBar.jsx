@@ -18,6 +18,8 @@ import MoreIcon from '@mui/icons-material/MoreVert';
 import CategoryTabs from "./CategoryTabs"
 import HomeIcon from '@mui/icons-material/Home';
 import { useNavigate } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom';
+import { Link } from '@mui/material';
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -161,27 +163,35 @@ export default function NavBar() {
   );
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static">
+    <Box sx={{ 
+      flexGrow: 1 }}>
+      <AppBar position="static" sx={{
+            backgroundColor: '#001f20',
+      }}>
         <Toolbar>
           <IconButton
             size="large"
             edge="start"
             color="inherit"
             aria-label="go to homepage"
-            sx={{ mr: 2 }}
-            onClick={() => window.location.href = '/'}
+            sx={{ mr: 2, color: '#f3ebd9'}}
+            onClick={() => navigate('/')}
           >
             <HomeIcon />
           </IconButton>
-          <Typography
-            variant="h6"
-            noWrap
-            component="div"
-            sx={{ display: { xs: 'none', sm: 'block' } }}
-          >
+         <Link
+  component={RouterLink}
+  to="/"
+  underline="none"
+  variant="h6"
+  sx={{
+    display: { xs: 'none', sm: 'block' },
+    color: '#f3ebd9',
+    fontWeight: 'bold',
+  }}
+>
             Muggles' Magic Market
-          </Typography>
+       </Link>
           <Box
     sx={{
       position: 'absolute',
@@ -204,7 +214,7 @@ export default function NavBar() {
           <Box sx={{ flexGrow: 1 }} />
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
     
-            <IconButton color="inherit">
+            <IconButton color="inherit" component={RouterLink} to="/shopping-cart">
              <ShoppingCartIcon />
             </IconButton>
 

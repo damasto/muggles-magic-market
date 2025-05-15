@@ -1,51 +1,41 @@
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { useCart } from "../Context/CartContext";
 import { Link } from "react-router-dom";
 import api from "../Api/axios";
+
+
 import {
-  Card,
-  CardContent,
-  CardMedia,
-  Typography,
-  CardActions,
-  Button,
   Box,
+  Typography,
+  Card,
+  CardMedia,
+  CardActions,
+  Grid,
+  CardContent,
+  Button,
 } from "@mui/material";
-import Grid from "@mui/material/Grid";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
-export default function ProductList() {
+export default function AllProductsPage() {
   const [products, setProducts] = useState([]);
   const imageAPI = "http://localhost:5173/src/assets/";
-  const {addItem} = useCart()
 
-
-
-  const getProducts = () => {
+  const fetchAllProducts = () => {
     api
       .get("/products")
-      .then(res => setProducts(res.data))
+      .then((response) => {
+        setProducts(response.data);
+      })
       .catch((error) => console.log(error));
   };
 
   useEffect(() => {
-    console.log("fetching products...");
-    getProducts();
+    fetchAllProducts();
   }, []);
-
-  const displayedProducts = products.slice(0, 4);
 
   return (
     <>
-      <Box
-        sx={{
-          textAlign: "left",
-          backgroundColor: "#fff",
-          pt: 6,
-          ml: 6,
-        }}
-      >
+      <Box sx={{ textAlign: "left", backgroundColor: "#fff", pt: 6, ml: 6 }}>
         <Typography
           variant="h4"
           sx={{
@@ -54,10 +44,9 @@ export default function ProductList() {
             fontSize: "1.5rem",
             textTransform: "uppercase",
             letterSpacing: "2px",
-            textShadow: "none",
           }}
         >
-          Bestsellers
+          All Products
         </Typography>
       </Box>
       <Box
@@ -70,19 +59,9 @@ export default function ProductList() {
           mt: 3,
         }}
       >
-        <Grid
-          container
-          spacing={4}
-          justifyContent="center"
-          sx={{
-            maxWidth: "100%",
-            width: "100%",
-            margin: 0,
-          }}
-        >
-          {displayedProducts.map((product) => (
+        <Grid container spacing={4} justifyContent="center">
+          {products.map((product) => (
             <Grid item xs={12} sm={6} md={4} key={product.id}>
-
               <Card
                 sx={{
                   width: 250,
@@ -91,17 +70,12 @@ export default function ProductList() {
                   flexDirection: "column",
                 }}
               >
-                  <CardMedia
-                    component="img"
-                    sx={{
-                      width: "100%",
-                      height: "100%",
-                      objectFit: "cover",
-  
-                    }}
-                    image={`${imageAPI}${product.image}`}
-                    alt={product.title}
-                  />
+                <CardMedia
+                  component="img"
+                  sx={{ width: "100%", height: "100%", objectFit: "cover" }}
+                  image={`${imageAPI}${product.image}`}
+                  alt={product.title}
+                />
                 <CardContent
                   sx={{
                     flexGrow: 1,
@@ -127,7 +101,7 @@ export default function ProductList() {
                   <Link className="link" to={`/product-details/${product.id}`}>
                     <Button size="small">Details</Button>
                   </Link>
-                  <Button size="small" onClick={() => addItem(product)}>
+                  <Button size="small">
                     <ShoppingCartIcon />
                   </Button>
                 </CardActions>
