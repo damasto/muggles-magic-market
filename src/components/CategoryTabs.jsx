@@ -46,18 +46,6 @@ export default function CategoryTabs() {
           },
         }}
       >
-        {categories.map(cat => {
-          return (
-            <Link to={cat.path}>
-              <Tab key={cat.path} label={cat.label} value={cat.path}
-                sx={{ marginX: 2 }}
-              />
-            </Link>
-          )
-        }
-
-        )}
-      </Tabs>
         {categories.map(cat => (
           <Tab key={cat.path} label={cat.label} value={cat.path} 
             sx={{ marginX: 2,
