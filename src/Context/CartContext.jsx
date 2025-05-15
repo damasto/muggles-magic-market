@@ -6,21 +6,20 @@ const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [shoppingCart, setShoppingCart] = useState([]);
-  const [products, setProducts] = useState([]); // <-- NIEUW: state voor producten
-  const [loading, setLoading] = useState(true); // <-- NIEUW: loading state
+  const [products, setProducts] = useState([]); 
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     async function fetchCartAndProducts() {
       try {
-        // <-- NIEUW: gelijktijdig cart en products ophalen
         const [cartRes, productsRes] = await Promise.all([
           api.get("/shoppingCart"),
           api.get("/products"),
         ]);
 
-        setProducts(productsRes.data); // <-- NIEUW: producten opslaan
+        setProducts(productsRes.data); 
 
-        // <-- NIEUW: combineer cart items met product info
+
         const detailedCart = cartRes.data.map(item => {
           const product = productsRes.data.find(p => p.id === item.productId || p.id === item.id);
           return {
@@ -29,11 +28,11 @@ export const CartProvider = ({ children }) => {
           };
         });
 
-        setShoppingCart(detailedCart); // <-- NIEUW: zet gecombineerde data in state
+        setShoppingCart(detailedCart); 
       } catch (error) {
         console.error("Error fetching cart or products:", error);
       } finally {
-        setLoading(false); // <-- NIEUW: loading klaar
+        setLoading(false); 
       }
     }
 
@@ -52,21 +51,21 @@ export const CartProvider = ({ children }) => {
           quantity: itemFound.quantity + quantity
         };
         const updateRes = await api.put(`/shoppingCart/${itemFound.id}`, updateQuantity);
-        // <-- AANGEPAST: update de cart met de response en behoud product info
+   
         setShoppingCart(prev =>
           prev.map(ci => ci.id === itemFound.id ? {...updateRes.data, product: ci.product} : ci)
         );
       } else {
         const itemToAdd = {
           id: item.id,
-          productId: item.id, // <-- NIEUW: productId meegeven zodat combineren kan
+          productId: item.id, 
           quantity,
           price: item.price,
           title: item.title,
           image: item.image
         };
         const createRes = await api.post(`/shoppingCart`, itemToAdd);
-        // <-- NIEUW: nieuwe item toevoegen met product data erbij
+
         setShoppingCart(prev => [...prev, {...createRes.data, product: item}]);
       }
     } catch (error) {
@@ -75,7 +74,7 @@ export const CartProvider = ({ children }) => {
   };
 
  const removeItem = (id) => {
-  console.log("Removing item with id:", id);  // voor debug
+  console.log("Removing item with id:", id); 
   api
     .delete(`/shoppingCart/${id}`)
     .then((res) => {
