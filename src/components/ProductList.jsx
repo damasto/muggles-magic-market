@@ -41,20 +41,23 @@ export default function ProductList() {
       <Box
         sx={{
           textAlign: "left",
-          backgroundColor: "#fff",
+          backgroundColor: "#4b3c21",
           pt: 6,
-          ml: 6,
+          width: "100%",
+          px: 6,
+         
         }}
       >
         <Typography
           variant="h4"
           sx={{
-            color: "#000",
+            color: "#f3ebd9",
             fontWeight: "bold",
             fontSize: "1.5rem",
             textTransform: "uppercase",
             letterSpacing: "2px",
             textShadow: "none",
+               mb: 3,
           }}
         >
           Bestsellers
@@ -67,7 +70,6 @@ export default function ProductList() {
           display: "flex",
           width: "100%",
           justifyContent: "center",
-          mt: 3,
         }}
       >
         <Grid

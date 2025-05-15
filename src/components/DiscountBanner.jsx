@@ -12,7 +12,7 @@ const DiscountBanner = () => {
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
         width: '100%',
-        color: '#FDF8F0', 
+        color: '#4b3c21', 
         display: 'flex',
         alignItems: 'center',
         justifyContent: 'center',
