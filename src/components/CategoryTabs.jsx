@@ -25,8 +25,8 @@ export default function CategoryTabs() {
   };
 
   return (
-    <Box sx={{ 
-      width: '100%', 
+    <Box sx={{
+      width: '100%',
       margin: '0 auto',
       backgroundColor: "#EED5A5",
     backgroundImage: `url(${backgroundbarImage})`,

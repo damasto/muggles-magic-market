@@ -10,28 +10,31 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 export default function CategoryPage() {
 
     const [products, setProducts] = useState([])
+    const imageAPI = "https://muggles-magic-market.netlify.app/src/assets/";
     const { categoryId } = useParams()
     console.log(categoryId)
-    const imageAPI = "http://localhost:5173/src/assets/";
+
 
     const getProductByCat = () => {
         console.log("fetching products...")
         api
-            .get("http://localhost:5005/products")
+            .get("/products")
             .then((response) => {
                 const allProducts = response.data
                 console.log("allProds:", allProducts)
 
-                const findCategory = allProducts.find(p => p.category.includes(categoryId))
-                console.log("cat", findCategory)
-                setProducts([...products, findCategory])
+                const filterByCat = allProducts.filter(p => p.category.includes(categoryId))
+                console.log("cat", filterByCat)
+                setProducts([filterByCat])
             })
             .catch((error) => console.log(error));
     };
 
     useEffect(() => {
-        getProductByCat()
-    }, [])
+        if (categoryId) {
+            getProductByCat()
+        }
+    }, [categoryId])
 
 
 
