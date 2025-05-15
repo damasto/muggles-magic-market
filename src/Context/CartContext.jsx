@@ -1,78 +1,93 @@
 import { createContext, useContext, useState, useEffect } from "react";
-import axios from "axios";
+import axios from "axios"; 
 import api from "../Api/axios";
 
 const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
   const [shoppingCart, setShoppingCart] = useState([]);
+  const [products, setProducts] = useState([]); 
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
-    api
-      .get("/shoppingCart")
-      .then((res) => setShoppingCart(res.data))
-      .catch((err) => console.log(console.log(err)));
+    async function fetchCartAndProducts() {
+      try {
+        const [cartRes, productsRes] = await Promise.all([
+          api.get("/shoppingCart"),
+          api.get("/products"),
+        ]);
+
+        setProducts(productsRes.data); 
+
+
+        const detailedCart = cartRes.data.map(item => {
+          const product = productsRes.data.find(p => p.id === item.productId || p.id === item.id);
+          return {
+            ...item,
+            product,
+          };
+        });
+
+        setShoppingCart(detailedCart); 
+      } catch (error) {
+        console.error("Error fetching cart or products:", error);
+      } finally {
+        setLoading(false); 
+      }
+    }
+
+    fetchCartAndProducts();
   }, []);
 
-  const addItem = (item, quantity=1) => {
-    api.get(`/shoppingCart`)
-  .then(res => {
-    console.log("get req:" , res.data)
-    const itemFound = Array.isArray(res.data)
-    ? res.data.find(cartItem => cartItem.id === item.id)
-    : null;
+  const addItem = async (item, quantity = 1) => {
+    try {
+      const res = await api.get(`/shoppingCart`);
+      const cartItems = res.data;
+      const itemFound = cartItems.find(cartItem => cartItem.id === item.id);
+
+      if (itemFound) {
+        const updateQuantity = {
+          ...itemFound,
+          quantity: itemFound.quantity + quantity
+        };
+        const updateRes = await api.put(`/shoppingCart/${itemFound.id}`, updateQuantity);
    
-    if (itemFound) {
-      // Item exists, update its quantity
-      const updateQuantity = {
-        ...itemFound,
-        quantity: itemFound.quantity + 1
-      };
+        setShoppingCart(prev =>
+          prev.map(ci => ci.id === itemFound.id ? {...updateRes.data, product: ci.product} : ci)
+        );
+      } else {
+        const itemToAdd = {
+          id: item.id,
+          productId: item.id, 
+          quantity,
+          price: item.price,
+          title: item.title,
+          image: item.image
+        };
+        const createRes = await api.post(`/shoppingCart`, itemToAdd);
 
-      // PUT request to update the item in the cart
-      api.put(`shoppingCart/${itemFound.id}`, updateQuantity)
-        .then(res => {
-          console.log("item successfully updated", res.data);
-          setShoppingCart(prev => 
-            prev.map((currentProduct) =>
-              currentProduct.id === itemFound.id ? res.data : currentProduct
-            )
-          );
-        })
-        .catch(err => console.log("Error updating item", err));
-    } else {
-      // Item doesn't exist, so create a new one
-      const itemToAdd = {
-        id: item.id,
-        title: item.title,
-        quantity: quantity,
-        price: item.price,
-        image: item.image
-      };
-
-      // POST request to add the item to the cart
-      api.post(`/shoppingCart`, itemToAdd)
-        .then(res => {
-          console.log("new cart item created: ", res.data);
-          setShoppingCart(prev => [...prev, res.data]); // Add new item to state
-        })
-        .catch(err => console.log("Error creating new item", err));
+        setShoppingCart(prev => [...prev, {...createRes.data, product: item}]);
+      }
+    } catch (error) {
+      console.log("Error adding item:", error);
     }
-  })
-  .catch(err => console.log("Error while trying to add item: ", err));
   };
 
-  const removeItem = (id) => {
-    axios
-      .delete(`/shoppingCart/${id}`)
-      .then((res) => console.log("Item has been removed from cart:", res))
-      .catch((err) => console.log(err));
-  };
+ const removeItem = (id) => {
+  console.log("Removing item with id:", id); 
+  api
+    .delete(`/shoppingCart/${id}`)
+    .then((res) => {
+      console.log("Item verwijderd:", res.data);
+      setShoppingCart(prev => prev.filter(item => item.id !== id));
+    })
+    .catch((err) => {
+      console.error("Fout bij verwijderen:", err);
+    });
+};
 
   return (
-    <CartContext.Provider
-      value={{ shoppingCart, addItem, removeItem }}
-    >
+    <CartContext.Provider value={{ shoppingCart, addItem, removeItem, loading }}>
       {children}
     </CartContext.Provider>
   );
