@@ -1,7 +1,6 @@
 import React from 'react';
 import { Tabs, Tab, Box } from '@mui/material';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Link } from 'react-router-dom';
 import backgroundbarImage from '../assets/backgroundbar.png';
 
 const categories = [
