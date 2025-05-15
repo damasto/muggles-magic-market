@@ -24,12 +24,7 @@ export default function ProductList() {
   const getProducts = () => {
     axios
       .get("http://localhost:5005/products")
-      .then((response) => {
-        console.log("this is the response object", response);
-        console.log("this is the response data", response.data);
-
-        setProducts(response.data);
-      })
+      .then(res => setProducts(res.data))
       .catch((error) => console.log(error));
   };
 
@@ -38,7 +33,6 @@ export default function ProductList() {
     getProducts();
   }, []);
 
-  console.log("our products: ", products);
   const displayedProducts = products.slice(0, 4);
 
   return (
