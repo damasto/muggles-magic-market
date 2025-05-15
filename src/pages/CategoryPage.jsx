@@ -10,7 +10,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 export default function CategoryPage() {
 
     const [products, setProducts] = useState([])
-    const imageAPI = "http://localhost:5173/src/assets/";
+    const imageAPI = "https://muggles-magic-market.netlify.app/src/assets/";
     const { categoryId } = useParams()
     console.log(categoryId)
 
