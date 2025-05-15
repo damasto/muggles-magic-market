@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
 import { v4 as uuid } from "uuid";
-import api from "../Axios/axios";
+import api from "../Api/axios";
 import { Card, Divider, CardActions, CardMedia, CardContent, Typography, Button, Box, TextField, Rating } from "@mui/material";
 import StarIcon from '@mui/icons-material/Star';
 
