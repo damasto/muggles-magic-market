@@ -97,7 +97,6 @@ export default function ProductDetailPage() {
                 setRating(0)
 
             }
-  addToCart(productToAdd);
 
         }
 
