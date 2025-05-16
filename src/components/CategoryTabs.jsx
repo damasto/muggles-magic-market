@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tabs, Tab, Box } from '@mui/material';
 import { useNavigate, useLocation } from 'react-router-dom';
-import backgroundbarImage from '../assets/backgroundbar.png';
+
 
 const categories = [
   { label: 'Animals', path: '/category/animals' },
@@ -28,7 +28,7 @@ export default function CategoryTabs() {
       width: '100%',
       margin: '0 auto',
       backgroundColor: "#EED5A5",
-    backgroundImage: `url(${backgroundbarImage})`,
+backgroundImage: 'url("/assets/backgroundbar.png")',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
