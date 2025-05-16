@@ -1,6 +1,3 @@
-import NavBar from "../components/NavBar";
-import Footer from "../components/Footer";
-
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
@@ -8,10 +5,11 @@ import { v4 as uuid } from "uuid";
 import api from "../Api/axios";
 import { Card, Divider, CardActions, CardMedia, CardContent, Typography, Button, Box, TextField, Rating } from "@mui/material";
 import StarIcon from '@mui/icons-material/Star';
+import { useCart } from "../Context/CartContext";
 
 
 export default function ProductDetailPage() {
-
+    const { addItem } = useCart();
     const [product, setProduct] = useState([]);
 
 
@@ -140,7 +138,7 @@ export default function ProductDetailPage() {
                                 <Typography variant="body1" color="text.secondary" paragraph>
                                     {`Price: ${product.price}€`}
                                 </Typography>
-                                <Button size="small">Add to Cart</Button>
+                                <Button size="small" onClick={() => addItem(product)}>Add to Cart</Button>
                             </CardActions>
 
                         </Box>
