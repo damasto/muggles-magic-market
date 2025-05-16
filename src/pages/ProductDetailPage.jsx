@@ -136,7 +136,7 @@ export default function ProductDetailPage() {
 
                             <CardActions sx={{ justifyContent: 'space-between', padding: '4 16px 8px 16px' }}>
                                 <Typography variant="body1" color="text.secondary" paragraph>
-                                    {`Price: ${product.price}€`}
+                                    {`Price: €${product.price}`}
                                 </Typography>
                                 <Button size="small" onClick={() => addItem(product)}>Add to Cart</Button>
                             </CardActions>
