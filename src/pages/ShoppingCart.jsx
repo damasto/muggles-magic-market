@@ -78,6 +78,9 @@ export default function ShoppingCart() {
       <Button variant="contained" color="primary">
         Continue Shopping
       </Button>
+      <Button variant="contained" color="primary">
+        Continue to checkout
+      </Button>
     </Link>
   </Box>
 )}

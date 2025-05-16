@@ -15,11 +15,22 @@ import {
   Button,
 } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import SearchBar from "../components/SearchBar";
 
 export default function AllProductsPage() {
   const [products, setProducts] = useState([]);
   const imageAPI = "/images/";
   const { addItem } = useCart();
+  const [query, setQuery] = useState("")
+
+  const handleQuery = (input) => {
+    setQuery(input)
+  }
+
+  const searchProduct = () => {
+    api.get(`products/search?q=${query}`)
+      .then((res) => setProducts(res.data))
+  }
 
   const fetchAllProducts = () => {
     api
@@ -31,11 +42,18 @@ export default function AllProductsPage() {
   };
 
   useEffect(() => {
-    fetchAllProducts();
-  }, []);
+
+    if (query.trim()) {
+      searchProduct()
+    } else {
+      fetchAllProducts();
+    }
+
+  }, [query]);
 
   return (
     <>
+      <SearchBar handleQuery={handleQuery} />
       <Box sx={{ textAlign: "left", backgroundColor: "#fff", pt: 6, ml: 6 }}>
         <Typography
           variant="h4"
