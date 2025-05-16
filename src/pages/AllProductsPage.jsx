@@ -59,7 +59,7 @@ console.log(query)
 
   return (
     <>
-      <SearchBar handleQuery={handleQuery} />
+      <SearchBar query={query} handleQuery={handleQuery} />
       <Box sx={{ textAlign: "left", backgroundColor: "#fff", pt: 6, ml: 6 }}>
         <Typography
           variant="h4"
