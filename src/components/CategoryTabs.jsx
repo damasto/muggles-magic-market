@@ -9,8 +9,6 @@ const categories = [
   { label: 'Jewelry', path: '/category/jewelry' },
   { label: 'Potions', path: '/category/potions' },
   { label: 'Wands', path: '/category/wands' },
-  { label: 'Selling', path: '/selling' },
-
 ];
 
 export default function CategoryTabs() {
@@ -28,7 +26,7 @@ export default function CategoryTabs() {
       width: '100%',
       margin: '0 auto',
       backgroundColor: "#EED5A5",
-backgroundImage: 'url("/assets/backgroundbar.png")',
+backgroundImage: 'url("/images/backgroundbar.png")',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat',
