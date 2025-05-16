@@ -1,5 +1,5 @@
 import React from 'react';
-import { Container, Typography, Box, List, ListItem, ListItemText, Divider, Button, Link } from '@mui/material';
+import { Container, Typography, Box, List, ListItem, ListItemText, ListItemAvatar, Avatar, Divider, Button, Link,  } from '@mui/material';
 import { Link as RouterLink } from "react-router-dom";
 import { useCart } from "../Context/CartContext"
 
@@ -47,9 +47,17 @@ export default function ShoppingCart() {
                   }
                   sx={{ px: 0 }}
                 >
+      <ListItemAvatar>
+        <Avatar
+        variant='square'
+        src={`/images/${item.image}`}
+        sx={{width:50, height:50, mr:2}}
+        ></Avatar>
+      </ListItemAvatar>
       <ListItemText
+
         primary={item.product ? item.product.title : item.title}
-        secondary={`€${item.price} - quantity: ${item.quantity}`}
+        secondary={`€${item.price} - pcs: ${item.quantity}`}
       />
     </ListItem>
     <Divider component="li" />
