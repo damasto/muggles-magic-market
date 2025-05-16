@@ -41,7 +41,7 @@ export default function ProductList() {
       <Box
         sx={{
           textAlign: "left",
-          backgroundColor: "#4b3c21",
+          backgroundColor: "#122415",
           pt: 6,
           width: "100%",
           px: 6,
@@ -77,7 +77,6 @@ export default function ProductList() {
           spacing={4}
           justifyContent="center"
           sx={{
-            maxWidth: "100%",
             width: "100%",
             margin: 0,
           }}

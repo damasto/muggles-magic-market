@@ -16,7 +16,7 @@ const CategoryCards = () => {
       <Box
         sx={{
           textAlign: "left",
-          backgroundColor: "#fff",
+          backgroundColor: "#4b3c21",
           pt: 6,
           ml: 6,
         }}

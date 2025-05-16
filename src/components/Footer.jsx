@@ -4,7 +4,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Footer = () => {
   return (
-    <Box component="footer" sx={{ bgcolor: 'grey.100', py: 2, mt: 'auto', marginTop: 4 }}>
+    <Box component="footer" sx={{ bgcolor: '#001f20', py: 2, mt: 'auto', marginTop: 4 }}>
       <Stack direction="column" justifyContent="center" alignItems="center" spacing={1}>
         <Link
           id='footer-git'
@@ -14,11 +14,8 @@ const Footer = () => {
           rel="noopener"
           color="inherit"
         >
-           <GitHubIcon fontSize="small" />
-          <Typography variant="body2" color="textSecondary">
-            Developed by Daniel and Angèle
-          </Typography>
-         
+           <GitHubIcon fontSize="small" htmlColor="#f3ebd9" />
+        
         </Link>
       </Stack>
     </Box>
