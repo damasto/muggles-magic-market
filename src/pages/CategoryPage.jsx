@@ -5,10 +5,11 @@ import api from "../Api/axios";
 
 import { Box, Typography, Card, CardMedia, CardActions, Grid, CardContent, Button } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
+import { useCart } from "../Context/CartContext";
 
 
 export default function CategoryPage() {
-
+    const { addItem } = useCart();
     const [products, setProducts] = useState([])
     const imageAPI = "http://localhost:5173/src/assets/";
     const { categoryId } = useParams()
@@ -139,7 +140,7 @@ export default function CategoryPage() {
                                     <Link className="link" to={`/product-details/${product.id}`}>
                                         <Button size="small">Details</Button>
                                     </Link>
-                                    <Button size="small">
+                                    <Button size="small" onClick={() => addItem(product)}>
                                         <ShoppingCartIcon />
                                     </Button>
                                 </CardActions>
