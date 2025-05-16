@@ -11,7 +11,7 @@ import { useCart } from "../Context/CartContext";
 export default function CategoryPage() {
     const { addItem } = useCart();
     const [products, setProducts] = useState([])
-    const imageAPI = "http://localhost:5173/src/assets/";
+    const imageAPI = "/images/";
     const { categoryId } = useParams()
     console.log(categoryId)
 
