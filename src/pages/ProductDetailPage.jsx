@@ -106,7 +106,10 @@ export default function ProductDetailPage() {
     }
 
     const decrease = () => {
-        setQuantity(prev => prev -1) 
+
+        if (quantity > 0) {
+            setQuantity(prev => prev -1)
+        }
     }
 
     const addToCart = (product, quantity) => {
@@ -159,7 +162,6 @@ export default function ProductDetailPage() {
                                     display="flex"
                                     justifyContent="center"
                                     alignItems="center"
-                                    border={"1px solid black"}
                                     height={60}
                                 >
 
@@ -189,7 +191,7 @@ export default function ProductDetailPage() {
                                 <Button
                                     variant="outlined"
                                     onClick={() => navigate(-1)}
-                                    sx={{ alignSelf: "flex-start", mb: 2 }}
+                                    sx={{ alignSelf: "flex-start", m:3 }}
                                 >
                                     Go Back
                                 </Button>
