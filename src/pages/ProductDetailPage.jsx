@@ -113,9 +113,13 @@ export default function ProductDetailPage() {
                 bgcolor="#f9f9f9"
                 p={2}
             >
-            <Button variant="outlined" onClick={() => navigate(-1)} sx={{ mb: 2 }}>
-  Go back
-</Button>
+              <Button
+    variant="outlined"
+    onClick={() => navigate(-1)}
+    sx={{ alignSelf: "flex-start", mb: 2 }}
+  >
+    Go Back
+  </Button>
                 <Card sx={{ maxWidth: 800, width: '100%', boxShadow: 6, p: 2 }}>
                     <CardMedia
                         component="img"
@@ -140,7 +144,7 @@ export default function ProductDetailPage() {
 
                             <CardActions sx={{ justifyContent: 'space-between', padding: '4 16px 8px 16px' }}>
                                 <Typography variant="body1" color="text.secondary" paragraph>
-                                    {`Price: ${product.price}€`}
+                                    {`Price: €${product.price}`}
                                 </Typography>
                                 <Button size="small" onClick={() => addItem(product)}>Add to Cart</Button>
                             </CardActions>
@@ -194,7 +198,7 @@ export default function ProductDetailPage() {
                                 sx={{ mb: 2 }}
                             />
 
-                            {/* Submit Button */}
+                     
                             <Button type="submit" variant="contained">
                                 Submit
                             </Button>
