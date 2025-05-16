@@ -20,6 +20,7 @@ import HomeIcon from '@mui/icons-material/Home';
 import { useNavigate } from 'react-router-dom';
 import { Link as RouterLink } from 'react-router-dom';
 import { Link } from '@mui/material';
+import { useCart } from "../Context/CartContext";
 
 const Search = styled('div')(({ theme }) => ({
   position: 'relative',
@@ -63,6 +64,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 export default function NavBar() {
+  const { shoppingCart } = useCart();
+    const cartCount = shoppingCart.reduce((total, item) => total + item.quantity, 0);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -216,7 +219,9 @@ export default function NavBar() {
           <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
     
             <IconButton color="inherit" component={RouterLink} to="/shopping-cart">
+            <Badge badgeContent={cartCount} color="error">
              <ShoppingCartIcon />
+             </Badge>
             </IconButton>
 
             <IconButton
