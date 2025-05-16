@@ -2,6 +2,7 @@ import React from 'react';
 import { Container, Typography, Box, List, ListItem, ListItemText, ListItemAvatar, Avatar, Divider, Button, Link,  } from '@mui/material';
 import { Link as RouterLink } from "react-router-dom";
 import { useCart } from "../Context/CartContext"
+import NavBar from '../components/NavBar';
 
 export default function ShoppingCart() {
   const { shoppingCart, removeItem, loading } = useCart();
@@ -22,6 +23,8 @@ export default function ShoppingCart() {
   );
 
   return (
+    <>
+    <NavBar/>
     <Container maxWidth="md">
       <Box sx={{ mt: 4 }}>
         <Typography variant="h4" gutterBottom>
@@ -85,5 +88,7 @@ export default function ShoppingCart() {
   </Box>
 )}
     </Container>
+    </>
   );
+
 }

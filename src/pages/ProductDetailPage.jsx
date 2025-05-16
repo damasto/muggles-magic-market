@@ -6,10 +6,12 @@ import { Card, Divider, CardActions, CardMedia, CardContent, Typography, Button,
 import StarIcon from '@mui/icons-material/Star';
 import { useCart } from "../Context/CartContext";
 import { useParams, useNavigate } from "react-router-dom";
+import NavBar from "../components/NavBar";
+import NavBarWithSearch from "../components/NavBarWithSearch";
 
 export default function ProductDetailPage() {
     const { addItem } = useCart();
-    const [product, setProduct] = useState([]);
+    const [product, setProduct] = useState({});
     const navigate = useNavigate();
 
 
@@ -36,7 +38,14 @@ export default function ProductDetailPage() {
     useEffect(() => {
         console.log("fetching products...")
         getProduct()
+ 
     }, [])
+
+    useEffect(() => {
+      if (product?.reviews) {
+        setRatingAverage(calculateAverage(product.reviews))
+      }
+    }, [product])
 
     const calculateAverage = (array) => {
         let totalSum = 0;
@@ -58,7 +67,6 @@ export default function ProductDetailPage() {
             .then(res => {
                 console.log("product successfully updated with new comment:", res.data)
                 setProduct(res.data) //ensures re-rendering of page when reviews are updated  
-                setRatingAverage(calculateAverage(res.data.reviews))
             })
             .catch(err => console.log("Error updating reviews:", err))
 
@@ -121,14 +129,16 @@ export default function ProductDetailPage() {
 
     return (
         <>
+    <NavBarWithSearch/>
             <Box
                 display="flex"
                 justifyContent="center"
                 alignItems="flex-start"
                 minHeight="100vh"
-                bgcolor="#f9f9f9"
+                bgcolor="#122415"
                 p={2}
                 gap={2}
+                sx={{border:"1px solid black"}}
             >
                 <Card sx={{ maxWidth: 800, width: '100%', boxShadow: 6, p: 2 }}>
                     <CardMedia

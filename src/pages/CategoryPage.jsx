@@ -6,6 +6,7 @@ import api from "../Api/axios";
 import { Box, Typography, Card, CardMedia, CardActions, Grid, CardContent, Button } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useCart } from "../Context/CartContext";
+import NavBar from "../components/NavBar";
 
 
 export default function CategoryPage() {
@@ -51,6 +52,7 @@ export default function CategoryPage() {
 
     return (
         <>
+        <NavBar/> 
             <Box
                 sx={{
                     textAlign: "left",

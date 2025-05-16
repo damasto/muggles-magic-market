@@ -8,6 +8,7 @@ import Footer from "../components/Footer"
 export default function HomePage() {
     return (
         <>
+        <NavBar/>
             <div style={{ display: "flex", flexDirection: "column", minHeight: "100vh" }}>
                 <Header />
                 <ProductList />

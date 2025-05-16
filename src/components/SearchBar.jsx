@@ -49,15 +49,6 @@ export default function SearchBar({ handleQuery, query }) {
 
     return (
         <>
-            <Box
-                sx={{
-                    position: 'absolute',
-                    left: '50%',
-                    transform: 'translateX(-50%)',
-                    width: '100%',
-                    maxWidth: 600,
-                }}
-            >
                 <Search>
                     <SearchIconWrapper>
                         <SearchIcon />
@@ -69,7 +60,6 @@ export default function SearchBar({ handleQuery, query }) {
                         onChange={(e) => handleQuery(e.target.value)}
                     />
                 </Search>
-            </Box>
         </>
     )
 }

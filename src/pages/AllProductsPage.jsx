@@ -16,6 +16,8 @@ import {
 } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import SearchBar from "../components/SearchBar";
+import NavBar from "../components/NavBar";
+import NavBarWithSearch from "../components/NavBarWithSearch";
 
 export default function AllProductsPage() {
   const [products, setProducts] = useState([]);
@@ -33,7 +35,7 @@ console.log(query)
   }, [query])
 
   const searchProduct = () => {
-    api.get(`/products/search?q=${query}`)
+    api.get(`/products/?title_like=${query}`)
       .then((res) => setProducts(res.data))
       .catch(err => console.log(err))
   }
@@ -59,7 +61,8 @@ console.log(query)
 
   return (
     <>
-      <SearchBar query={query} handleQuery={handleQuery} />
+    
+    <NavBarWithSearch handleQuery={handleQuery} query={query}/>
       <Box sx={{ textAlign: "left", backgroundColor: "#fff", pt: 6, ml: 6 }}>
         <Typography
           variant="h4"
