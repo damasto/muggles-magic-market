@@ -6,7 +6,7 @@ const DiscountBanner = () => {
     <Box
       sx={{
         height: '300px',
-       backgroundImage: 'url("/assets/discountbanner.png")',
+       backgroundImage: 'url("/images/discountbanner.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

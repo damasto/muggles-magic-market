@@ -10,7 +10,7 @@ const Header = () => {
         width: '100%',
         maxWidth: 1280,
         margin: '0 auto',
-       backgroundImage: 'url("/assets/header.png")',
+       backgroundImage: 'url("/images/header.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         display: 'flex',
