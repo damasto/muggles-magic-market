@@ -1,5 +1,6 @@
 import React from 'react';
-import { Container, Typography, Box, List, ListItem, ListItemText, Divider, Button } from '@mui/material';
+import { Container, Typography, Box, List, ListItem, ListItemText, Divider, Button, Link } from '@mui/material';
+import { Link as RouterLink } from "react-router-dom";
 import { useCart } from "../Context/CartContext"
 
 export default function ShoppingCart() {
@@ -63,6 +64,15 @@ export default function ShoppingCart() {
         </>
      )}
         </Box>
+        {shoppingCart.length === 0 ? null : (
+  <Box sx={{ mt: 4, display: 'flex', justifyContent: 'center' }}>
+    <Link component={RouterLink} to="/" underline="none">
+      <Button variant="contained" color="primary">
+        Continue Shopping
+      </Button>
+    </Link>
+  </Box>
+)}
     </Container>
   );
 }
