@@ -17,7 +17,7 @@ import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 
 export default function ProductList() {
   const [products, setProducts] = useState([]);
-  const imageAPI = "/assets/";
+  const imageAPI = "/images/"
   const {addItem} = useCart()
 
 
