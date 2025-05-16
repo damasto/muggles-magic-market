@@ -24,7 +24,6 @@ function App() {
         <Route path="*" element={<NotFoundPage />}></Route>
         <Route path="/" element={<HomePage />}></Route>
         <Route path="/category/:categoryId" element={<CategoryPage />}></Route>
-        <Route path="/selling" element={<SellingPage />}></Route>
         <Route path="/all-products" element={<AllProductsPage />}></Route>
         <Route path="/product-details/:productId" element={<ProductDetailPage />}></Route>
         <Route path="/shopping-cart" element={<ShoppingCart />}></Route>
