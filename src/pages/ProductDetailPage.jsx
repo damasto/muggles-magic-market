@@ -1,16 +1,17 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
 import axios from "axios";
 import { v4 as uuid } from "uuid";
 import api from "../Api/axios";
 import { Card, Divider, CardActions, CardMedia, CardContent, Typography, Button, Box, TextField, Rating } from "@mui/material";
 import StarIcon from '@mui/icons-material/Star';
 import { useCart } from "../Context/CartContext";
+import { useParams, useNavigate } from "react-router-dom";
 
 
 export default function ProductDetailPage() {
     const { addItem } = useCart();
     const [product, setProduct] = useState([]);
+    const navigate = useNavigate();
 
 
     const [commentAuthor, setCommentAuthor] = useState("")
@@ -19,7 +20,7 @@ export default function ProductDetailPage() {
     const [commentText, setCommentText] = useState("")
 
     const { productId } = useParams()
-    const imageAPI = "http://localhost:5173/src/assets/"
+    const imageAPI = "/assets"
 
 
     const getProduct = () => {
@@ -112,6 +113,9 @@ export default function ProductDetailPage() {
                 bgcolor="#f9f9f9"
                 p={2}
             >
+            <Button variant="outlined" onClick={() => navigate(-1)} sx={{ mb: 2 }}>
+  Go back
+</Button>
                 <Card sx={{ maxWidth: 800, width: '100%', boxShadow: 6, p: 2 }}>
                     <CardMedia
                         component="img"
