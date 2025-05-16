@@ -7,7 +7,6 @@ import ProductDetailPage from './pages/ProductDetailPage'
 import ShoppingCart from "./pages/ShoppingCart"
 import CheckoutPage from './pages/CheckoutPage'
 import NotFoundPage from './pages/NotFoundPage'
-import SellingPage from './pages/SellingPage'
 import AllProductsPage from './pages/AllProductsPage'
 import NavBar from './components/NavBar'
 import Footer from './components/Footer'
