@@ -21,7 +21,7 @@ export default function ProductDetailPage() {
     const [commentText, setCommentText] = useState("")
 
     const { productId } = useParams()
-    const imageAPI = "http://localhost:5173/src/assets/"
+    const imageAPI = "/images/"
 
 
     const getProduct = () => {
@@ -38,7 +38,7 @@ export default function ProductDetailPage() {
         console.log("fetching products...")
         getProduct()
     }, [])
-
+    
     const calculateAverage = (array) => {
         let totalSum = 0;
         let divider = 0
