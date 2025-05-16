@@ -112,6 +112,13 @@ export default function ProductDetailPage() {
                 bgcolor="#f9f9f9"
                 p={2}
             >
+              <Button
+    variant="outlined"
+    onClick={() => navigate(-1)}
+    sx={{ alignSelf: "flex-start", mb: 2 }}
+  >
+    Go Back
+  </Button>
                 <Card sx={{ maxWidth: 800, width: '100%', boxShadow: 6, p: 2 }}>
                     <CardMedia
                         component="img"
@@ -190,7 +197,7 @@ export default function ProductDetailPage() {
                                 sx={{ mb: 2 }}
                             />
 
-                            {/* Submit Button */}
+                     
                             <Button type="submit" variant="contained">
                                 Submit
                             </Button>
