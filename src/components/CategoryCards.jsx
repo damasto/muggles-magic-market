@@ -17,14 +17,15 @@ const CategoryCards = () => {
         sx={{
           textAlign: "left",
           backgroundColor: "#4b3c21",
-          pt: 6,
-          ml: 6,
-        }}
+         pt: 6,
+    px: 6,
+    width: "100%",
+      }}
       >
         <Typography
           variant="h4"
           sx={{
-            color: "#000",
+            color: "#f3ebd9",
             fontWeight: "bold",
             fontSize: "1.5rem",
             textTransform: "uppercase",
@@ -42,7 +43,7 @@ const CategoryCards = () => {
           display: "flex",
           width: "100%",
           justifyContent: "center",
-          mt: 3,
+         
         }}
       >
         <Grid
