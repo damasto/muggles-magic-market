@@ -4,11 +4,11 @@ import { Link } from 'react-router-dom';
 
 const CategoryCards = () => {
   const displayedCategories = [
-  { label: 'Animals', path: '/category/animals' },
-  { label: 'Food', path: '/category/food' },
-  { label: 'Jewelry', path: '/category/jewelry' },
-  { label: 'Potions', path: '/category/potions' },
-  { label: 'Wands', path: '/category/wands' },
+  { label: 'Animals', path: '/category/animals', backgroundColor: '#2C4A3F'  },
+  { label: 'Food', path: '/category/food' , backgroundColor: '#2E6562'},
+  { label: 'Jewelry', path: '/category/jewelry',  backgroundColor: '#556B2F' },
+  { label: 'Potions', path: '/category/potions' , backgroundColor: '#3B6064'},
+  { label: 'Wands', path: '/category/wands' , backgroundColor: '#8B5E3C' },
   ];
 
   return (
@@ -16,7 +16,7 @@ const CategoryCards = () => {
       <Box
         sx={{
           textAlign: "left",
-          backgroundColor: "#122415",
+          backgroundColor: "#4b3c21",
          pt: 6,
     px: 6,
     width: "100%",
@@ -64,31 +64,24 @@ const CategoryCards = () => {
                   height: 200,
                   display: "flex",
                   flexDirection: "column",
+                   backgroundColor: category.backgroundColor,
+                    alignItems: "center",
+                  justifyContent: "center",
                 }}
               >
-                <CardMedia
-                  component="img"
-                  sx={{
-                    width: "100%",
-                    height: "100%",
-                    objectFit: "cover",
-                  }}
-                  image={`path_to_images/${category.image}`} 
-                  alt={category.label}
-                />
-                <Link className="link" to = { category.path }> 
+                <Link to = { category.path } style={{ textDecoration: 'none', width: '100%'}}> 
                 <CardContent
                   sx={{
                     flexGrow: 1,
-                    paddingBottom: 0,
                     display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "flex-start",
+                 alignItems: "center",
+                    justifyContent: "center",
+                    height: "100%",
                   }}
                 >
                   <Typography
                     variant="h6"
-                    sx={{ fontWeight: "bold", marginBottom: 0.25 }}
+                    sx={{ fontWeight: "bold", color: "#f3ebd9",  textAlign: "center", marginBottom: 0.25 }}
                   >
                     {category.label}
                   </Typography>
