@@ -9,8 +9,6 @@ const categories = [
   { label: 'Jewelry', path: '/category/jewelry' },
   { label: 'Potions', path: '/category/potions' },
   { label: 'Wands', path: '/category/wands' },
-  { label: 'Selling', path: '/selling' },
-
 ];
 
 export default function CategoryTabs() {
