@@ -1,5 +1,4 @@
 import { Box, Typography, Button } from '@mui/material';
-import discountbannerImage from '../assets/discountbanner.png';
 import { Link as RouterLink } from 'react-router-dom'; 
 
 const DiscountBanner = () => {
@@ -7,7 +6,7 @@ const DiscountBanner = () => {
     <Box
       sx={{
         height: '300px',
-        backgroundImage: `url(${discountbannerImage})`,
+       backgroundImage: 'url("/assets/discountbanner.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',

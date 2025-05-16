@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
-import headerImage from '../assets/header.png';
 import { Link } from 'react-router-dom';
 
 const Header = () => {
@@ -11,7 +10,7 @@ const Header = () => {
         width: '100%',
         maxWidth: 1280,
         margin: '0 auto',
-        backgroundImage: `url(${headerImage})`,
+       backgroundImage: 'url("/assets/header.png")',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         display: 'flex',
