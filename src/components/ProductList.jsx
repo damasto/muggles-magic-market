@@ -110,6 +110,7 @@ export default function ProductList() {
                     display: "flex",
                     flexDirection: "column",
                     justifyContent: "flex-start",
+                    backgroundColor: "#f3ebd9"
                   }}
                 >
                   <Typography
@@ -123,13 +124,17 @@ export default function ProductList() {
                   sx={{
                     justifyContent: "space-between",
                     padding: "4 16px 8px 16px",
+                      backgroundColor: "#f3ebd9", 
                   }}
                 >
                   <Link className="link" to={`/product-details/${product.id}`}>
-                    <Button size="small">Details</Button>
+                    <Button 
+                    size="small"
+                     sx={{ color: "#122415"}} 
+                     >Details</Button>
                   </Link>
                   <Button size="small" onClick={() => addItem(product)}>
-                    <ShoppingCartIcon />
+                    <ShoppingCartIcon sx={{ color: "#122415" }}/>
                   </Button>
                 </CardActions>
               </Card>
