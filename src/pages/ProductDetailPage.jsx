@@ -6,8 +6,6 @@ import { Card, Divider, CardActions, CardMedia, CardContent, Typography, Button,
 import StarIcon from '@mui/icons-material/Star';
 import { useCart } from "../Context/CartContext";
 import { useParams, useNavigate } from "react-router-dom";
-import { useNavigate } from "react-router-dom";
-
 
 export default function ProductDetailPage() {
     const { addItem } = useCart();
@@ -113,6 +111,7 @@ export default function ProductDetailPage() {
                 minHeight="100vh"
                 bgcolor="#f9f9f9"
                 p={2}
+                gap={2} 
             >
               <Button
     variant="outlined"
