@@ -22,14 +22,20 @@ export default function AllProductsPage() {
   const imageAPI = "/images/";
   const { addItem } = useCart();
   const [query, setQuery] = useState("")
+  
 
   const handleQuery = (input) => {
     setQuery(input)
   }
 
+  useEffect(() => {
+console.log(query)
+  }, [query])
+
   const searchProduct = () => {
-    api.get(`products/search?q=${query}`)
+    api.get(`/products/search?q=${query}`)
       .then((res) => setProducts(res.data))
+      .catch(err => console.log(err))
   }
 
   const fetchAllProducts = () => {
