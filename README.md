@@ -51,7 +51,19 @@ npm run dev
 
 
 # Folder Structure
-<pre> ``` project-root/ ├── public/ # Static assets (e.g., images, icons, manifest) │ └── images/ # Image files accessible via URL ├── src/ # Source code │ ├── api/ # API utility functions and service calls │ ├── components/ # Reusable UI components │ ├── context/ # React context providers for global state │ ├── pages/ # Route-level components or views │ ├── App.jsx # Root application component │ └── main.jsx # Entry point for React (e.g., ReactDOM.render) ├── .gitignore ├── package.json └── README.md ``` </pre>
+<pre> ``` project-root/
+├── public/ # Static assets (e.g., images, icons, manifest) 
+│ └── images/ # Image files accessible via URL 
+├── src/ # Source code
+│ ├── api/ # API utility functions and service calls
+│ ├── components/ # Reusable UI components
+│ ├── context/ # React context providers for global state
+│ ├── pages/ # Route-level components or views
+│ ├── App.jsx # Root application component
+│ └── main.jsx # Entry point for React (e.g., ReactDOM.render)
+├── .gitignore
+├── package.json 
+└── README.md ``` </pre>
 
 
 # Acknowledgements
