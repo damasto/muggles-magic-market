@@ -7,6 +7,7 @@ import { useCart } from "../Context/CartContext";
 import { useParams, useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
 
+
 export default function ProductDetailPage() {
     const { addItem } = useCart();
     const [product, setProduct] = useState({});
