@@ -1,12 +1,83 @@
-# React + Vite
+# Muggles Magic Market
+[Discover magic in every corner](https://github.com/damasto/muggles-magic-market)
+---
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Description
+---
+A SPA for Muggles allowing them to purchase the hottest from Hogwarts
 
-Currently, two official plugins are available:
+# MVP
+---
+- SPA using React consisting of multiple views
+- Frontend integrated with a JSON.server backend 
+- Performing CRUD actions:
+>- C: Create items in shopping cart
+>- R: Read and display product and product details
+>- U: Update existing comment list
+>- D: Delete Items from shopping cart
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+# Backlog
+- Checkout Page
+- Order Confirmation Page
+- User sign in 
+- Chat
+- Search parameters
+- Crazy Pop-Ups
+
+
+
+# Features
+- View products
+- Rate product
+- Leave product review
+- Search products
+- Navigate through products by categories
+- Add single product to shopping cart
+- Add multiple products to shopping cart
+
+# Installation
+
+## 1. Clone the repository:
+git clone https://github.com/damasto/muggles-magic-market
+cd muggles-magic-market
+
+## 2. Install dependencies:
+npm install
+
+# Development
+npm run dev
+
+
+# Folder Structure
+project-root/
+├── public/             # Static assets (e.g., images, icons, manifest)
+│   └── images/         # Image files accessible via URL
+├── src/                # Source code
+│   ├── api/            # API utility functions and service calls
+│   ├── components/     # Reusable UI components
+│   ├── context/        # React context providers for global state
+│   ├── pages/          # Route-level components or views
+│   ├── App.jsx         # Root application component
+│   └── main.jsx        # Entry point for React (e.g., ReactDOM.render)
+├── .gitignore
+├── package.json
+└── README.md
+
+
+# Acknowledgements
+- [React](https://react.dev/)
+- [Vite] (https://vite.dev/)
+- [MUI] (https://mui.com/)
+- [Axios] (https://axios-http.com/)
+
+
+# Links
+
+-[Trello](https://trello.com/b/8tdMbXSx/muggles-magic-market)
+-[Slides](https://www.canva.com/design/DAGniqYXhS0/xbcJN-zhkp30Mwd_-Xz3dA/view?utm_content=DAGniqYXhS0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6eecd22586)
+-[Github-repository Frontend](https://github.com/damasto/muggles-magic-market)
+-[Github-repository Backend](https://github.com/angeleVG/magic-shop-backend)
+-[Deployment Frontend](https://muggles-magic-market.netlify.app)
+-[Deployment Backend](https://muggles-magic-market.netlify.app)
