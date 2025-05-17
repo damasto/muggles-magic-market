@@ -26,7 +26,7 @@ export default function ShoppingCart() {
     <>
       <NavBar />
       <Container maxWidth="md">
-        <Box sx={{ mt: 4, minHeight: 650, border: "1px solid black" }}>
+        <Box sx={{ mt: 4, minHeight: 650}}>
           <Typography variant="h4" gutterBottom>
             Your shopping cart
           </Typography>
@@ -67,7 +67,7 @@ export default function ShoppingCart() {
                   </React.Fragment>
                 ))}
               </List>
-              <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end', border: "1px solid black" }}>
+              <Box sx={{ mt: 2, display: 'flex', justifyContent: 'flex-end' }}>
                 <Typography variant="h6" fontWeight="bold">
                   Total: €{totalPrice.toFixed(2)}
                 </Typography>
@@ -76,7 +76,7 @@ export default function ShoppingCart() {
           )}
         </Box>
         {shoppingCart.length === 0 ? null : (
-          <Box sx={{ m: 4, display: 'flex', justifyContent: 'center', alignItems: "center", border: "1px solid black" }}>
+          <Box sx={{ m: 4, display: 'flex', justifyContent: 'center', alignItems: "center"}}>
             <Link component={RouterLink} to="/" underline="none">
               <Button variant="contained" color="primary">
                 Continue shopping
