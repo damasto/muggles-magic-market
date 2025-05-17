@@ -25,7 +25,7 @@ A single page application for Muggles allowing them to purchase the hottest tren
 - Chat
 - Search parameters
 - Crazy Pop-Ups
-
+- Product Carousel 
 
 
 # Features
