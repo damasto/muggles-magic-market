@@ -19,14 +19,6 @@ const DiscountBanner = () => {
         flexDirection: 'column',
       }}
     >
-     <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'flex-start',
-          gap: 2, 
-        }}
-      ></Box>
       <Typography
         variant="h4"
         sx={{
@@ -34,6 +26,7 @@ const DiscountBanner = () => {
           letterSpacing: '0.5px',
           textTransform: 'uppercase',
           marginBottom: 2,
+          border: "1p solid black"
         }}
       >
         ✨ LIMITED TIME OFFER: 20% OFF ON ALL WANDS! ✨
@@ -43,6 +36,7 @@ const DiscountBanner = () => {
         color: '#f3ebd9',
         border: '2px solid #f3ebd9',
         backgroundColor: '#0d1b2a',
+        border: "1px solid black"
         }}>
         Shop wands
       </Button>

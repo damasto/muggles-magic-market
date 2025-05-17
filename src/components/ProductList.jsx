@@ -1,4 +1,3 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
 import { useCart } from "../Context/CartContext";
 import { Link } from "react-router-dom";
@@ -43,9 +42,7 @@ export default function ProductList() {
           textAlign: "left",
           backgroundColor: "#122415",
           pt: 6,
-          width: "100%",
           px: 6,
-         
         }}
       >
         <Typography

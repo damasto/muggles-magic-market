@@ -1,8 +1,6 @@
-import axios, { all } from "axios";
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import api from "../Api/axios";
-
 import { Box, Typography, Card, CardMedia, CardActions, Grid, CardContent, Button } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { useCart } from "../Context/CartContext";

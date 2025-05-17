@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react"
 import { alpha, styled } from '@mui/material/styles';
 import InputBase from '@mui/material/InputBase';
 import SearchIcon from '@mui/icons-material/Search';
-import Box from '@mui/material/Box';
+
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',

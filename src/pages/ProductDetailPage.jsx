@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { v4 as uuid } from "uuid";
 import api from "../Api/axios";
 import { Card, Divider, CardActions, CardMedia, CardContent, Typography, Button, Box, TextField, Rating, Icon } from "@mui/material";
@@ -7,7 +6,6 @@ import StarIcon from '@mui/icons-material/Star';
 import { useCart } from "../Context/CartContext";
 import { useParams, useNavigate } from "react-router-dom";
 import NavBar from "../components/NavBar";
-import NavBarWithSearch from "../components/NavBarWithSearch";
 
 export default function ProductDetailPage() {
     const { addItem } = useCart();
@@ -129,7 +127,7 @@ export default function ProductDetailPage() {
 
     return (
         <>
-    <NavBarWithSearch/>
+    <NavBar/>
             <Box
                 display="flex"
                 justifyContent="center"

@@ -1,9 +1,7 @@
-import axios from "axios";
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import api from "../Api/axios";
 import { useCart } from "../Context/CartContext";
-
 import {
   Box,
   Typography,
@@ -15,8 +13,6 @@ import {
   Button,
 } from "@mui/material";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
-import SearchBar from "../components/SearchBar";
-import NavBar from "../components/NavBar";
 import NavBarWithSearch from "../components/NavBarWithSearch";
 
 export default function AllProductsPage() {

@@ -36,11 +36,13 @@ backgroundImage: 'url("/images/backgroundbar.png")',
         onChange={handleChange}
         indicatorColor="secondary"
         textColor="secondary"
-        centered
+        variant="fullWidth"
          sx={{
           '& .MuiTabs-indicator': {
             backgroundColor: '#A97C50', 
           },
+    
+          
         }}
       >
         {categories.map(cat => (
