@@ -71,7 +71,7 @@ project-root/
 # Acknowledgements
 - [React](https://react.dev/)
 - [Vite](https://vite.dev/)
-- [MUI] (https://mui.com/)
+- [MUI](https://mui.com/)
 - [Axios](https://axios-http.com/)
 
 
