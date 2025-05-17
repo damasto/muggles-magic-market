@@ -78,7 +78,7 @@ project-root/
 # Links
 
 - [Trello](https://trello.com/b/8tdMbXSx/muggles-magic-market)
-- [Slides](https://www.canva.com/design/DAGniqYXhS0/xbcJN-zhkp30Mwd_-Xz3dA/view?utm_content=DAGniqYXhS0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6eecd22586)
+- [Presentation](https://www.canva.com/design/DAGniqYXhS0/xbcJN-zhkp30Mwd_-Xz3dA/view?utm_content=DAGniqYXhS0&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=h6eecd22586)
 - [Github-repository Frontend](https://github.com/damasto/muggles-magic-market)
 - [Github-repository Backend](https://github.com/angeleVG/magic-shop-backend)
 - [Deployment Frontend](https://muggles-magic-market.netlify.app)
