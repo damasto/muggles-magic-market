@@ -1,5 +1,5 @@
 # Muggles Magic Market
-[Discover magic in every corner](https://github.com/damasto/muggles-magic-market)
+[Discover magic in every corner](https://muggles-magic-market.netlify.app)
 ---
 
 # Description
