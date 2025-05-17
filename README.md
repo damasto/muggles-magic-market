@@ -51,7 +51,7 @@ npm run dev
 
 
 # Folder Structure
-<pre> ``` 
+<pre>
 project-root/
 ├── public/ # Static assets (e.g., images, icons, manifest) 
 │ └── images/ # Image files accessible via URL 
@@ -65,7 +65,7 @@ project-root/
 ├── .gitignore
 ├── package.json 
 └── README.md
-``` </pre>
+</pre>
 
 
 # Acknowledgements
